@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+</head>
+<style>
+body
+    {
+        font-family: Arial, sans-serif;
+        background-color: #ccffcc;
+    }
+.calculator
+     {
+        width:40%;
+        margin: 40px auto;
+        padding:10px;
+        background-color:white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+     }
+h2 
+{
+    margin-top:15px;
+}
+
+form 
+{
+    margin-bottom: 20px;
+}
+
+label 
+{
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="number"]
+{
+    width:98%;
+    height:20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+button 
+{
+    width: 100%;
+    height: 40px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover 
+{
+    background-color: #3e8e41;
+}
+#rectangle-result, #circle-result 
+{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+</style>
+<body>
+    <h1>Area of rectangle And area of circle
+    <img src="C:\Users\tejas\OneDrive\Desktop\assignment21\Assignment21\map.png" height="90px" width="90px"> </h1>
+    <div class="calculator">
+        <h2>Rectangle Area Calculator</h2>
+        <form id="rectangle-form">
+            <label for="length">Enter Length:</label>
+            <input type="number" id="length" required><br><br>
+            <label for="width">Enter Width:</label>
+            <input type="number" id="width" required><br><br>
+            <button id="rectangle-btn">Calculate Area</button>
+        </form>
+        <p id="rectangle-result"></p>
+
+        <h2>Circle Area Calculator</h2>
+        <form id="circle-form">
+            <label for="radius">Enter Radius:</label>
+            <input type="number" id="radius" required><br><br>
+            <button id="circle-btn">Calculate Area</button>
+        </form>
+        <p id="circle-result"></p>
+    </div>
+
+    <script>
+document.getElementById("rectangle-btn").addEventListener("click", function(event) 
+{
+    event.preventDefault();
+    let length = parseFloat(document.getElementById("length").value);
+    let width = parseFloat(document.getElementById("width").value);
+    let area = length * width;
+    document.getElementById("rectangle-result").innerHTML = "The area of the rectangle is: " + area + " sq. units";
+});
+document.getElementById("circle-btn").addEventListener("click", function(event)
+ {
+    event.preventDefault();
+    let radius = parseFloat(document.getElementById("radius").value);
+    let area = Math.PI * radius * radius;
+    document.getElementById("circle-result").innerHTML = "The area of the circle is: " + area.toFixed(2) + " sq. units";
+});
+</script>
+</body>
+</html>
